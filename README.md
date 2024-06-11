@@ -72,5 +72,5 @@
 ### ***Credits***
 
 ##### Markdown Cheatsheet: [GitHub](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
-##### Canva :[canva](https://www.canva.com/design/DAGHv_MDYms/fFag0wkMM5e852P4dCjePg/edit?utm_content=DAGHv_MDYms&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+##### Wireframe tool :[Canva](https://www.canva.com/design/DAGHv_MDYms/fFag0wkMM5e852P4dCjePg/edit?utm_content=DAGHv_MDYms&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 ***
