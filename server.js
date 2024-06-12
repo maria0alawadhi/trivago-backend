@@ -3,6 +3,7 @@ const logger = require('morgan')
 const cors = require('cors')
 
 const user = require('./routes/user')
+
 const PostRouter = require('./routes/PostRouter')
 
 const PORT = process.env.PORT || 3001
