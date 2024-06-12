@@ -6,6 +6,8 @@ const AuthRouter = require("./routes/AuthRouter")
 const HotelsRouter = require("./routes/HotelsRouter")
 const RoomsRouter = require("./routes/RoomsRouter")
 
+
+
 const PORT = process.env.PORT || 3001
 
 const db = require("./db")
