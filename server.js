@@ -1,25 +1,27 @@
-const express = require('express')
-const logger = require('morgan')
-const cors = require('cors')
+const express = require("express")
+const logger = require("morgan")
+const cors = require("cors")
 
-const user = require('./routes/user')
-const PostRouter = require('./routes/PostRouter')
+const AuthRouter = require("./routes/AuthRouter")
+const HotelsRouter = require("./routes/HotelsRouter")
+const RoomsRouter = require("./routes/RoomsRouter")
 
 const PORT = process.env.PORT || 3001
 
-const db = require('./db')
+const db = require("./db")
 
 const app = express()
 
 app.use(cors())
-app.use(logger('dev'))
+app.use(logger("dev"))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-app.use('/auth', AuthRouter)
-app.use('/posts', PostRouter)
+app.use("/auth", AuthRouter)
+app.use("/", HotelsRouter)
+app.use("/", RoomsRouter)
 
-app.use('/', (req, res) => {
+app.use("/", (req, res) => {
   res.send(`Connected!`)
 })
 
