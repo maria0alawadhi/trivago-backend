@@ -16,10 +16,10 @@ const { Reservation } = require('../models')
 // }
 const DeleteReservation = async (req, res) => {
   try {
-    await Reservation.deleteOne({ _id: req.params.reservation_id })
+    await Reservation.deleteOne({ _id: req.params.id })
     res.send({
       msg: 'Reservation Deleted',
-      payload: reservation_id,
+      payload: id,
       status: 'Ok'
     })
   } catch (error) {
