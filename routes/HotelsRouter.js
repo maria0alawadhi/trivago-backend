@@ -1,10 +1,13 @@
 const router = require('express').Router()
 const HotelsCtrl = require('../controllers/HotelsController')
 
-router.get('/hotels', HotelsCtrl.GetHotels) // Get all hotels
-router.get('/hotels/:id', HotelsCtrl.GetHotel) // Get one hotel
-router.get('/hotels/:id/rooms', HotelsCtrl.GetRooms)
-// router.get('/rooms', HotelsCtrl.GetHotel)
+// get all hotels
+router.get('/hotels', HotelsCtrl.getHotels)
+// get one hotel
+router.get('/hotels/:id', HotelsCtrl.getHotel)
+//get hotel rooms
+router.get('/hotels/:id/rooms', HotelsCtrl.getRooms)
 
+router.get('/hotels/:hotelid/rooms/:roomid', HotelsCtrl.getRoom)
 
 module.exports = router
