@@ -7,7 +7,9 @@ router.get('/hotels', HotelsCtrl.getHotels)
 router.get('/hotels/:id', HotelsCtrl.getHotel)
 //get hotel rooms
 router.get('/hotels/:id/rooms', HotelsCtrl.getRooms)
-
+// get one room
 router.get('/hotels/:hotelid/rooms/:roomid', HotelsCtrl.getRoom)
+// creat a reservasion
+router.post('/hotels/:hotelid/rooms/:roomid', HotelsCtrl.create)
 
 module.exports = router
