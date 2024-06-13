@@ -1,15 +1,50 @@
-const { Room } = require('../models/Index')
-const { Hotel } = require('../models/Index')
+const { Reservation } = require('../models/Index')
 
-const GetRoom = async (req, res) => {
+const GetReservs = async (req, res) => {
   try {
-    const room = await Hotel.findById(_.id)
-    res.send(room)
+    const reservations = await Reservation.find()
+    res.send(reservations)
   } catch (error) {
     console.log(error)
+    res.status(500).send('Internal Server Error')
+  }
+}
+
+const GetReserv = async (req, res) => {
+  try {
+    const reservation = await Reservation.findById(req.params.id)
+    if (!reservation) {
+      return res.status(404).send('Reservation not found')
+    }
+    res.send(reservation)
+  } catch (error) {
+    console.log(error)
+    res.status(500).send('Internal Server Error')
+  }
+}
+
+const edit = async (req, res) => {
+  try {
+    const updatedReservation = await Reservation.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true, runValidators: true }
+    )
+    if (!updatedReservation) {
+      return res.status(404).send('Reservation not found')
+    }
+    res.send(updatedReservation)
+  } catch (error) {
+    console.log(error)
+    if (error.name === 'ValidationError') {
+      return res.status(400).send('Bad Request: Invalid data')
+    }
+    res.status(500).send('Internal Server Error')
   }
 }
 
 module.exports = {
-  GetRoom
+  GetReservs,
+  GetReserv,
+  edit
 }

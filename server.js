@@ -3,8 +3,8 @@ const logger = require('morgan')
 const cors = require('cors')
 
 const AuthRouter = require('./routes/auth')
-const hotelsotelsRouter = require('./routes/hotels')
-const roomsRouter = require('./routes/reservations')
+const HotelsRouter = require('./routes/hotels')
+const newReservation = require('./routes/reservations')
 
 const PORT = process.env.PORT || 3001
 
@@ -18,10 +18,8 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 app.use('/auth', AuthRouter)
-
-app.use('/', HotelsRouter)
-app.use('/', RoomsRouter)
-app.use('/', BookingRouter)
+app.use('/hotels', HotelsRouter)
+app.use('/reservations', newReservation)
 app.use('/', (req, res) => {
   res.send(`Connected!`)
 })
