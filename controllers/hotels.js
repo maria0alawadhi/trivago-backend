@@ -60,9 +60,8 @@ const createRes = async (req, res) => {
     const newRes = new Reservation(reservasion)
     const savedRes = await newRes.save()
     console.log(`Reservation completed ${savedRes._id}`)
-
     res.send({
-      msg: 'Reservation Deleted',
+      msg: 'Reservation Created',
       payload: req.params.id,
       status: 'Ok'
     })
