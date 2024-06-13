@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const RoomsCtrl = require('../controllers/RoomsController')
+
 
 
 // router.get('/rooms', RoomsCtrl.GetRooms)
