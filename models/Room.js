@@ -1,15 +1,15 @@
-const { Schema } = require("mongoose")
+const { Schema } = require('mongoose')
 
 const roomSchema = new Schema(
   {
     name: String,
     img: String,
-    type:String,
+    type: String,
     rating: Number,
     review: String,
-    available:Boolean,
+    available: Boolean,
     facilities: [String],
-    price: Number,
+    price: Number
   },
   { timestamps: true }
 )

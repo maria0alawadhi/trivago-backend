@@ -53,6 +53,7 @@ const getRoom = async (req, res) => {
     res.status(500).send('Error fetching room')
   }
 }
+
 // create a new reservasion
 const createRes = async (req, res) => {
   try {
@@ -69,10 +70,11 @@ const createRes = async (req, res) => {
     throw error
   }
 }
+
 module.exports = {
   getHotels,
   getHotel,
   getRooms,
   getRoom,
-  create: createRes
+  create:createRes
 }
