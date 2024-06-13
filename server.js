@@ -4,7 +4,7 @@ const cors = require('cors')
 
 const AuthRouter = require('./routes/auth')
 const hotelsRouter = require('./routes/hotels')
-const roomsRouter = require('./routes/rooms')
+const roomsRouter = require('./routes/reservations')
 
 const PORT = process.env.PORT || 3001
 
