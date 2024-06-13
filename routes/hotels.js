@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const HotelsCtrl = require('../controllers/HotelsController')
+const HotelsCtrl = require('../controllers/hotels')
 
 // get all hotels
 router.get('/hotels', HotelsCtrl.getHotels)
