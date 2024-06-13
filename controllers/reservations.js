@@ -12,6 +12,7 @@ const DeleteReserv = async (req, res) => {
     throw error
   }
 }
+
 module.exports = {
-  DeleteReserv
+  delete: DeleteReserv
 }
