@@ -53,27 +53,10 @@ const getRoom = async (req, res) => {
     res.status(500).send('Error fetching room')
   }
 }
-// create a new reservasion
-const createRes = async (req, res) => {
-  try {
-    const reservasion = req.body
-    const newRes = new Reservation(reservasion)
-    const savedRes = await newRes.save()
-    console.log(`Reservation completed ${savedRes._id}`)
 
-    res.send({
-      msg: 'Reservation Deleted',
-      payload: req.params.id,
-      status: 'Ok'
-    })
-  } catch (error) {
-    throw error
-  }
-}
 module.exports = {
   getHotels,
   getHotel,
   getRooms,
-  getRoom,
-  create: createRes
+  getRoom
 }
