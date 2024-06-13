@@ -14,6 +14,5 @@ const DeleteReserv = async (req, res) => {
 }
 
 module.exports = {
-  delete: DeleteReserv,
-  add: createRes
+  delete: DeleteReserv
 }
