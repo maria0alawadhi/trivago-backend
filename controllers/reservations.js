@@ -1,11 +1,11 @@
-const { Reservation } = require('../models')
+const { Reservation } = require('../models/Index')
 
-const DeleteReservation = async (req, res) => {
+const DeleteReserv = async (req, res) => {
   try {
     await Reservation.deleteOne({ _id: req.params.id })
     res.send({
       msg: 'Reservation Deleted',
-      payload: id,
+      payload: req.params.id,
       status: 'Ok'
     })
   } catch (error) {
@@ -13,5 +13,5 @@ const DeleteReservation = async (req, res) => {
   }
 }
 module.exports = {
-  DeleteReservation
+  DeleteReserv
 }
