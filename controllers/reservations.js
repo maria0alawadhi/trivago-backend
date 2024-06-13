@@ -1,6 +1,6 @@
+const { Reservation } = require('../models')
 // const {Room} = require("../models/index")
 // const {Hotel}= require("../models/index")
-
 
 // const GetRoom = async (req, res) => {
 //   try {
@@ -14,3 +14,18 @@
 // module.exports={
 //   GetRoom
 // }
+const DeleteReservation = async (req, res) => {
+  try {
+    await Reservation.deleteOne({ _id: req.params.reservation_id })
+    res.send({
+      msg: 'Reservation Deleted',
+      payload: reservation_id,
+      status: 'Ok'
+    })
+  } catch (error) {
+    throw error
+  }
+}
+module.exports = {
+  DeleteReservation
+}
