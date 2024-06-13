@@ -1,15 +1,17 @@
-const { Room } = require('../models/Index')
-const { Hotel } = require('../models/Index')
+const { Reservation } = require('../models/Index')
 
-const GetRoom = async (req, res) => {
+const DeleteReserv = async (req, res) => {
   try {
-    const room = await Hotel.findById(_.id)
-    res.send(room)
+    await Reservation.deleteOne({ _id: req.params.id })
+    res.send({
+      msg: 'Reservation Deleted',
+      payload: req.params.id,
+      status: 'Ok'
+    })
   } catch (error) {
-    console.log(error)
+    throw error
   }
 }
-
 module.exports = {
-  GetRoom
+  DeleteReserv
 }
