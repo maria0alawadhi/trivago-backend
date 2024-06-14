@@ -18,8 +18,8 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 app.use('/auth', AuthRouter)
-app.use('/hotels', HotelsRouter)
-app.use('/reservations', newReservation)
+app.use('/', HotelsRouter)
+app.use('/', newReservation)
 app.use('/', (req, res) => {
   res.send(`Connected!`)
 })
