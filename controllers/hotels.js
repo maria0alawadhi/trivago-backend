@@ -14,7 +14,7 @@ const getHotels = async (req, res) => {
 //get one hotel
 const getHotel = async (req, res) => {
   try {
-    const hotel = await Hotel.findById(req.params.id)
+    const hotel = await Hotel.findById(req.params.hotelid)
     res.send(hotel)
   } catch (error) {
     console.log(error)
@@ -25,7 +25,7 @@ const getHotel = async (req, res) => {
 //get Hotel rooms
 const getRooms = async (req, res) => {
   try {
-    const hotel = await Hotel.findById(req.params.id).populate('rooms')
+    const hotel = await Hotel.findById(req.params.hotelid).populate('rooms')
     const rooms = hotel.rooms
     res.send(rooms)
   } catch (error) {
@@ -76,5 +76,5 @@ module.exports = {
   getHotel,
   getRooms,
   getRoom,
-  create:createRes
+  create: createRes
 }
