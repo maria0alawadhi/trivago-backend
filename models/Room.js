@@ -5,8 +5,7 @@ const roomSchema = new Schema(
     name: String,
     img: String,
     type: String,
-    rating: Number,
-    review: String,
+    review: [String],
     available: Boolean,
     facilities: [String],
     price: Number

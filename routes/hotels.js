@@ -5,7 +5,7 @@ const HotelsCtrl = require('../controllers/hotels')
 router.get('/hotels', HotelsCtrl.getHotels)
 // get one hotel
 router.get('/hotels/:id', HotelsCtrl.getHotel)
-//get hotel roo ms
+//get hotel rooms
 router.get('/hotels/:id/rooms', HotelsCtrl.getRooms)
 // get one room
 router.get('/hotels/:hotelid/rooms/:roomid', HotelsCtrl.getRoom)
@@ -14,3 +14,6 @@ router.get('/hotels/:hotelid/rooms/:roomid', HotelsCtrl.getRoom)
 // router.get('/hotels/reservasion/:hotelid/rooms/:roomid', HotelsCtrl.createRes)
 router.post('/hotels/reservasion/room', HotelsCtrl.create)
 module.exports = router
+
+// get all rooms in all from hotels
+router.get('/rooms', HotelsCtrl.getAllRooms)

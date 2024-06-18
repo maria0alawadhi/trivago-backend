@@ -1,4 +1,4 @@
-const { Hotel, Reservation } = require('../models/Index')
+const { Hotel, Reservation, Room } = require('../models/Index')
 
 //get all hotels
 const getHotels = async (req, res) => {
@@ -11,10 +11,19 @@ const getHotels = async (req, res) => {
   }
 }
 
+const getAllRooms = async (req, res) => {
+  try {
+    const rooms = await Room.find({})
+    res.send(rooms)
+  } catch (error) {
+    console.log(error)
+    res.status(500).send('Error fetching rooms')
+  }
+}
 //get one hotel
 const getHotel = async (req, res) => {
   try {
-    const hotel = await Hotel.findById(req.params.id)
+    const hotel = await Hotel.findById(req.params.hotelid)
     res.send(hotel)
   } catch (error) {
     console.log(error)
@@ -25,7 +34,7 @@ const getHotel = async (req, res) => {
 //get Hotel rooms
 const getRooms = async (req, res) => {
   try {
-    const hotel = await Hotel.findById(req.params.id).populate('rooms')
+    const hotel = await Hotel.findById(req.params.hotelid).populate('rooms')
     const rooms = hotel.rooms
     res.send(rooms)
   } catch (error) {
