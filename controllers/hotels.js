@@ -108,5 +108,6 @@ module.exports = {
   getHotel,
   getRooms,
   getRoom,
+  getAllRooms,
   create: createRes
 }
