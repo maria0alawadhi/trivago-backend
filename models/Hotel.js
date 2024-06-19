@@ -6,7 +6,7 @@ const hotelSchema = new Schema(
     location: String,
     img: String,
     rooms: [{ type: Schema.Types.ObjectId, ref: 'Room' }],
-    rating: { type: [Number], min: 0, max: 5 }
+    rating: { type: [Number], min: 0, max: 5 ,default:5 }
   },
   { timestamps: true }
 )
