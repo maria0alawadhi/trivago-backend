@@ -10,8 +10,6 @@ router.get('/hotels/:hotelid/rooms', HotelsCtrl.getRooms)
 // get one room
 router.get('/hotels/:hotelid/rooms/:roomid', HotelsCtrl.getRoom)
 
-
-
 router.put('/hotels/reservasion/room', HotelsCtrl.create)
 
 router.post('/hotels/:hotelid/rooms/:roomid', HotelsCtrl.create)
@@ -20,4 +18,3 @@ router.post('/hotels/:hotelid/rooms/:roomid', HotelsCtrl.create)
 router.get('/rooms', HotelsCtrl.getAllRooms)
 
 module.exports = router
-
