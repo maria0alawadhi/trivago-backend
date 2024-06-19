@@ -23,16 +23,6 @@ const GetReserv = async (req, res) => {
   }
 }
 
-const GetReser_by_roomid = async (roomId) => {
-  try {
-    const reservation = await Reservation.find({ room: roomId })
-    return reservation
-  } catch (error) {
-    console.error(error)
-    throw new Error('Failed to fetch reservation by room ID')
-  }
-}
-
 const edit = async (req, res) => {
   try {
     const updatedReservation = await Reservation.findByIdAndUpdate(
