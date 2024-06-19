@@ -1,4 +1,4 @@
-const { Hotel, Reservation,Room } = require('../models/Index')
+const { Hotel, Reservation, Room } = require('../models/Index')
 
 //get all hotels
 const getHotels = async (req, res) => {
@@ -76,7 +76,8 @@ const createRes = async (req, res) => {
       status: 'Ok'
     })
   } catch (error) {
-    throw error
+    console.error(error)
+    res.status(500).send('Error creatuing reservation')
   }
 }
 
