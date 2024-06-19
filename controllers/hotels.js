@@ -91,7 +91,7 @@ const createRes = async (req, res) => {
     let checkInDate = new Date(check_in)
     let checkOutDate = new Date(check_out)
 
-    // Ensure check-in date is before check-out date
+    // Ensure check-in date is before check-out date....
     if (checkInDate >= checkOutDate) {
       console.log(`First 500 response...`)
       res.status(500).send({
