@@ -133,7 +133,8 @@ const createRes = async (req, res) => {
       }
     }
   } catch (error) {
-    throw error
+    console.error(error)
+    res.status(500).send('Error creatuing reservation')
   }
 }
 

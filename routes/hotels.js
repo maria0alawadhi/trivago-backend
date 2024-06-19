@@ -10,10 +10,14 @@ router.get('/hotels/:hotelid/rooms', HotelsCtrl.getRooms)
 // get one room
 router.get('/hotels/:hotelid/rooms/:roomid', HotelsCtrl.getRoom)
 
-// creat a reservasion
+
 
 router.put('/hotels/reservasion/room', HotelsCtrl.create)
-module.exports = router
+
+router.post('/hotels/:hotelid/rooms/:roomid', HotelsCtrl.create)
 
 // get all rooms in all from hotels
-// router.get('/rooms', HotelsCtrl.getAllRooms)
+router.get('/rooms', HotelsCtrl.getAllRooms)
+
+module.exports = router
+
