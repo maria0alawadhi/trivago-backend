@@ -1,5 +1,4 @@
 const { Hotel, Reservation, Room } = require('../models/Index')
-var mongoose = require('mongoose')
 
 //get all hotels
 const getHotels = async (req, res) => {
