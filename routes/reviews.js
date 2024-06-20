@@ -1,8 +1,19 @@
 const router = require('express').Router()
 const reviewsCtrl = require('../controllers/reviews')
+const middleware = require('../middleware')
 
-router.get('/reviews/:roomid',reviewsCtrl.getAllReviews)
-router.post('/reviews/:roomid',reviewsCtrl.createReview)
-router.delete('/reviews/:roomid',reviewsCtrl.deleteReview)
+router.get('/reviews/:roomid', reviewsCtrl.getAllReviews)
+router.post(
+  '/reviews/:roomid',
+  middleware.stripToken,
+  middleware.verifyToken,
+  reviewsCtrl.createReview
+)
+router.delete(
+  '/reviews/:roomid',
+  middleware.stripToken,
+  middleware.verifyToken,
+  reviewsCtrl.deleteReview
+)
 
 module.exports = router
