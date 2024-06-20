@@ -86,30 +86,31 @@ const getRoom = async (req, res) => {
 
 const createRes = async (req, res) => {
   try {
-    const { hotelid, roomid } = req.params;
-    const { checkIn, checkOut, user } = req.body;
+    const { hotelid, roomid } = req.params
+    const { checkIn, checkOut, user } = req.body
     const existingReservations = await Reservation.find({
       room: roomid,
-      $or: [{ checkIn: { $lte: checkOut }, checkOut: { $gte: checkIn } }],
-    });
+      $or: [{ checkIn: { $lte: checkOut }, checkOut: { $gte: checkIn } }]
+    })
     if (existingReservations.length > 0) {
-      return res.status(400).json({ message: 'Room is not available for the selected dates.' });
+      return res
+        .status(400)
+        .json({ message: 'Room is not available for the selected dates.' })
     }
     const reservation = new Reservation({
       room: roomid,
       checkIn,
       checkOut,
-      user,
-    });
+      user
+    })
 
-    const savedReservation = await reservation.save();
-    res.status(201).json(savedReservation);
+    const savedReservation = await reservation.save()
+    res.status(201).json(savedReservation)
   } catch (error) {
-    console.error(error);
-    res.status(500).send('Error creating reservation');
+    console.error(error)
+    res.status(500).send('Error creating reservation')
   }
-};
-
+}
 
 module.exports = {
   getHotels,
@@ -117,6 +118,5 @@ module.exports = {
   getRooms,
   getRoom,
   create: createRes,
-  getAllRooms,
-
+  getAllRooms
 }
