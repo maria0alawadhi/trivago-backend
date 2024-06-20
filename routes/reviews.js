@@ -9,11 +9,6 @@ router.post(
   middleware.verifyToken,
   reviewsCtrl.createReview
 )
-router.delete(
-  '/reviews/:roomid',
-  middleware.stripToken,
-  middleware.verifyToken,
-  reviewsCtrl.deleteReview
-)
+
 
 module.exports = router
