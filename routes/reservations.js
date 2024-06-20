@@ -1,10 +1,30 @@
 const router = require('express').Router()
 const reservCtrl = require('../controllers/reservations')
+const middleware = require('../middleware')
 
-router.get('/reservations', reservCtrl.GetReservs)
-router.get('/reservations/:id', reservCtrl.GetReserv)
-router.put('/reservations/:id', reservCtrl.edit)
-router.delete('/reservations/:id', reservCtrl.delete)
-router.post('/reservation', reservCtrl.createRes)
+router.get(
+  '/reservations',
+  middleware.stripToken,
+  middleware.verifyToken,
+  reservCtrl.GetReservs
+)
+router.get(
+  '/reservations/:id',
+  middleware.stripToken,
+  middleware.verifyToken,
+  reservCtrl.GetReserv
+)
+router.put(
+  '/reservations/:id',
+  middleware.stripToken,
+  middleware.verifyToken,
+  reservCtrl.edit
+)
+router.delete(
+  '/reservations/:id',
+  middleware.stripToken,
+  middleware.verifyToken,
+  reservCtrl.delete
+)
 
 module.exports = router
