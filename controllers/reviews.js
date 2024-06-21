@@ -12,7 +12,9 @@ const createReview = async (req, res) => {
 
 const getAllReviews = async (req, res) => {
   try {
-    const reviews = await Review.find({ room: req.params.roomid })
+    const reviews = await Review.find({ room: req.params.roomid }).populate(
+      'user'
+    )
 
     if (!reviews) {
       return res.status(404).send('No reviews found')
