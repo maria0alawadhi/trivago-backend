@@ -24,7 +24,7 @@ app.use('/', ReservationsRouter)
 app.use('/', ReviewsRouter)
 
 app.use('/', (req, res) => {
-  res.send(`Connected!`)
+  res.send(`Connected to Trivago server!`)
 })
 
 app.listen(PORT, () => {
