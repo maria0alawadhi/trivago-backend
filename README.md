@@ -1,4 +1,6 @@
-# reservation Hotel App
+# Trivago 
+
+## Reservation Hotel App
 
 ## Date: 11/6/2024
 
@@ -16,7 +18,7 @@
 
 ### **_Description_**
 
-#### The hotel rooms reservation system will allow hotel administrators to manage their room inventory, with the ability to add, view, update, and delete rooms for each of their hotels. Users will be able to sign in to the system and browse the available rooms across all hotels, selecting and reservation the ones they wish to stay in. The system will maintain up-to-date room availability information, updating the database as reservations are made. The admin interface will provide a centralized platform for managing the hotel's room offerings, while the user-facing front-end will offer a seamless reservation experience, ensuring efficient hotel room management and reservation capabilities.
+#### The hotel reservation system will allow Users to sign in to the system and browse the available rooms across all hotels, select the hotel, and reserve the room they wish to stay in, and add a review or delete or edit their reservations. The system will maintain up-to-date room availability information, updating the database as reservations are made. The user will offer a seamless reservation experience, ensuring efficient hotel room management and reservation capabilities.
 
 ---
 
@@ -32,53 +34,64 @@
 
 ### **_Getting Started_**
 
-##### User can sign up and sign in,then begin viewing the different hotels with their rooms and booked one if the user is login otherwise he/she can view only.
+##### Users can sign up and sign in, then begin viewing the different hotels with their rooms and book one if the user is logged in  otherwise, can view only.
 
-##### Admin can sign in to manage the rooms in each hotel by adding/editting/deleting and viewing them.
+##### Users can book and create reservation rooms, delete the reservation, edit the reservation date, and add multiple reviews on each room.
 
 ##### A Trello board was used to keep track of development progress and can be viewed [here](https://trello.com/b/EUQNvHfp/hotel-project).
 
 ---
+### **_Diagrams_**
 
-### **_Wireframe_**
+### Component Hierarchy Diagram
+
+![Hierarchy Diagram drawio (2)](https://github.com/maria0alawadhi/trivago-frontend/assets/108873126/4e2eaf79-8cf6-401c-bbd0-52a534a3656f)
+
+
+### ERD 
+![erd-trivago](https://github.com/maria0alawadhi/trivago-frontend/assets/108873126/f9092558-80cc-4e8b-b284-e24b2c88d322)
+
+
+
+---
+### **_Screenshots_**
 
 ##### Home
+![home](https://github.com/maria0alawadhi/trivago-frontend/assets/108873126/ecb75da3-e509-4f0c-bb5e-38bab3b8dbc9)
 
-![Home](https://github.com/maria0alawadhi/Hotel-Project/assets/129513991/c8645078-761a-4545-9c29-8374e51a5986)
 
 ##### Hotel rooms
-
-![HotelRooms](https://github.com/maria0alawadhi/Hotel-Project/assets/129513991/86b2b5c6-c636-48f5-a91c-ecb03f69eb65)
+![HotelRooms](https://github.com/maria0alawadhi/trivago-frontend/assets/108873126/aaccea8f-7b43-4440-9f22-739234c013ce)
 
 ##### Room Details
+![RoomDetails](https://github.com/maria0alawadhi/trivago-frontend/assets/108873126/73c8c485-7e5c-4952-bd82-d75253e80b58)
 
-![RoomDetails](https://github.com/maria0alawadhi/Hotel-Project/assets/129513991/46f16237-6ad3-4dc3-b9fc-d52e5d7e9c9e)
 
-##### Add Room Form
+##### Reservation Rooms
+![ReservationRoom](https://github.com/maria0alawadhi/trivago-frontend/assets/108873126/3017f60c-2281-47b0-9d67-6f6a49cd2c80)
 
-![RoomForm](https://github.com/maria0alawadhi/Hotel-Project/assets/129513991/82cf5f92-9cf3-4319-ba44-dc34994e0d11)
 
-##### Edit Room Form
 
-![EditRoomForm](https://github.com/maria0alawadhi/Hotel-Project/assets/129513991/d1dd2762-68a5-4c92-93fe-ed256b1c0925)
+##### Edit Reservation Room 
+![edit](https://github.com/maria0alawadhi/trivago-frontend/assets/108873126/0b1f6186-1177-4bfa-ac71-3fb4b95918d3)
 
-##### Book Room
 
-![BookRoom](https://github.com/maria0alawadhi/Hotel-Project/assets/129513991/617b496b-5de6-4e7f-b21a-c505a87f9f73)
+##### Review Reservation Room
+![review](https://github.com/maria0alawadhi/trivago-frontend/assets/108873126/ef417545-f3d6-417e-9571-f686f9770e1c)
+
+
 
 ---
 
 ### **_Future Updates_**
 
-- [ ] To apply the full CRUD (Create, Read, Update, Delete) functionality to the Hotel data source.
-- [ ] To add hotel locations.
+- [ ] To apply the full CRUD on Admin type (Create, Read, Update, Delete) functionality to the Hotel data source.
+- [ ] To add hotel locations map.
 
 ---
 
 ### **_Credits_**
 
 ##### Markdown Cheatsheet: [GitHub](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
-
-##### Wireframe tool :[Canva](https://www.canva.com/design/DAGHv_MDYms/fFag0wkMM5e852P4dCjePg/edit?utm_content=DAGHv_MDYms&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
-
+#####  Tailwind CSS Alerts:[Flowbite](https://flowbite.com/docs/components/alerts/)
 ---
