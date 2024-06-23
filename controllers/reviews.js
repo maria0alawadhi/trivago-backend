@@ -1,5 +1,6 @@
 const { Review } = require('../models/Index')
 
+//create one review
 const createReview = async (req, res) => {
   try {
     const review = new Review(req.body)
@@ -10,6 +11,8 @@ const createReview = async (req, res) => {
   }
 }
 
+
+//get all review for a specific room 
 const getAllReviews = async (req, res) => {
   try {
     const reviews = await Review.find({ room: req.params.roomid }).populate(

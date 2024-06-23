@@ -8,9 +8,9 @@ router.get('/hotels', HotelsCtrl.getHotels)
 router.get('/hotels/:hotelid', HotelsCtrl.getHotel)
 //get hotel rooms
 router.get('/hotels/:hotelid/rooms', HotelsCtrl.getRooms)
-// get one room
+// get one hotel room
 router.get('/hotels/:hotelid/rooms/:roomid', HotelsCtrl.getRoom)
-
+// post a room hotel
 router.post(
   '/hotels/:hotelid/rooms/:roomid',
   middleware.stripToken,

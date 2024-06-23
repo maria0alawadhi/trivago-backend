@@ -10,28 +10,8 @@ const getHotels = async (req, res) => {
     res.status(500).send('Error fetching hotels')
   }
 }
-const checkAvailability = async (req, res) => {
-  const { room, checkIn, checkOut } = req.body
 
-  try {
-    const existingReservations = await Reservation.find({
-      room,
-      $or: [{ checkIn: { $lte: checkOut }, checkOut: { $gte: checkIn } }]
-    })
-
-    if (existingReservations.length > 0) {
-      return res
-        .status(400)
-        .json({ message: 'Room is not available for the selected dates.' })
-    }
-
-    res.status(200).json({ message: 'Room is available.' })
-  } catch (error) {
-    console.error('Error checking reservation availability:', error)
-    res.status(500).json({ message: 'Server error.' })
-  }
-}
-
+//get all rooms
 const getAllRooms = async (req, res) => {
   try {
     const rooms = await Room.find({})
@@ -52,7 +32,7 @@ const getHotel = async (req, res) => {
   }
 }
 
-//get Hotel rooms
+//get a Hotel rooms
 const getRooms = async (req, res) => {
   try {
     const hotel = await Hotel.findById(req.params.hotelid).populate('rooms')
@@ -86,30 +66,31 @@ const getRoom = async (req, res) => {
 
 const createRes = async (req, res) => {
   try {
-    const { hotelid, roomid } = req.params;
-    const { checkIn, checkOut, user } = req.body;
+    const { roomid } = req.params
+    const { checkIn, checkOut, user } = req.body
     const existingReservations = await Reservation.find({
       room: roomid,
-      $or: [{ checkIn: { $lte: checkOut }, checkOut: { $gte: checkIn } }],
-    });
+      $or: [{ checkIn: { $lte: checkOut }, checkOut: { $gte: checkIn } }]
+    })
     if (existingReservations.length > 0) {
-      return res.status(400).json({ message: 'Room is not available for the selected dates.' });
+      return res
+        .status(400)
+        .json({ message: 'Room is not available for the selected dates.' })
     }
     const reservation = new Reservation({
       room: roomid,
       checkIn,
       checkOut,
-      user,
-    });
+      user
+    })
 
-    const savedReservation = await reservation.save();
-    res.status(201).json(savedReservation);
+    const savedReservation = await reservation.save()
+    res.status(201).json(savedReservation)
   } catch (error) {
-    console.error(error);
-    res.status(500).send('Error creating reservation');
+    console.error(error)
+    res.status(500).send('Error creating reservation')
   }
-};
-
+}
 
 module.exports = {
   getHotels,
@@ -117,6 +98,5 @@ module.exports = {
   getRooms,
   getRoom,
   create: createRes,
-  getAllRooms,
-
+  getAllRooms
 }

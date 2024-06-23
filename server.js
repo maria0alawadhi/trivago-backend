@@ -2,6 +2,7 @@ const express = require('express')
 const logger = require('morgan')
 const cors = require('cors')
 
+
 const AuthRouter = require('./routes/auth')
 const HotelsRouter = require('./routes/hotels')
 const ReservationsRouter = require('./routes/reservations')
